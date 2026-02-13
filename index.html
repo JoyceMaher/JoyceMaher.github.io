@@ -7,78 +7,104 @@
   <style>
     /* Reset */
     * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
-    body { background: #121212; color: #f5f5f5; scroll-behavior: smooth; }
+    body { background: #2c2c2c; color: #f5f5f5; scroll-behavior: smooth; }
+    a { text-decoration: none; }
 
-    /* Smooth fade-in animation */
+    /* Animation */
     .fade-in { opacity: 0; transform: translateY(20px); transition: 1s ease-out; }
     .fade-in.visible { opacity: 1; transform: translateY(0); }
 
-    /* Section styling */
-    section { padding: 100px 20px; min-height: 100vh; }
-    h1, h2 { color: #FFD6FF; } /* pastel pink header */
-    h2 { margin-bottom: 1rem; }
+    /* Navigation */
+    nav { position: fixed; top: 0; width: 100%; background: #3a3a3a; display: flex; justify-content: center; gap: 2rem; padding: 1rem 0; z-index: 1000; }
+    nav a { color: #f5f5f5; text-transform: uppercase; font-weight: bold; transition: 0.3s; }
+    nav a:hover { color: #FFD6FF; }
+
+    /* Hero */
+    .hero { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 2rem; padding: 120px 20px 60px 20px; background: #383838; border-bottom: 3px solid #9DE0AD; }
+    .hero-text { max-width: 500px; }
+    .hero-text h1 { font-size: 2.5rem; color: #FFD6FF; margin-bottom: 1rem; }
+    .hero-text p { font-size: 1.2rem; color: #ddd; margin-bottom: 1rem; }
+    .hero img { width: 200px; border-radius: 50%; border: 3px solid #9DE0AD; }
+
+    /* Sections */
+    section { padding: 80px 20px; min-height: 80vh; }
+    h2 { color: #9DE0AD; margin-bottom: 1rem; font-size: 2rem; }
     p { margin-bottom: 1rem; line-height: 1.6; color: #ddd; }
 
-    /* Navigation */
-    nav { position: fixed; top: 0; width: 100%; background: #1e1e1e; display: flex; justify-content: center; gap: 2rem; padding: 1rem 0; z-index: 1000; }
-    nav a { color: #f5f5f5; text-transform: uppercase; font-weight: bold; transition: 0.3s; }
-    nav a:hover { color: #9DE0AD; } /* pastel green hover */
-
-    /* Buttons */
-    .btn { background: #9DE0AD; color: #121212; padding: 0.5rem 1rem; border-radius: 5px; font-weight: bold; transition: 0.3s; }
-    .btn:hover { background: #FFD6FF; color: #121212; }
-
-    /* Project list */
-    .project { background: #1e1e1e; padding: 1rem; margin: 1rem 0; border-left: 4px solid #9DE0AD; }
-    .project a { color: #9DE0AD; font-weight: bold; }
+    /* Projects */
+    .project { background: #3a3a3a; padding: 1rem; margin: 1rem 0; border-left: 4px solid #FFD6FF; }
+    .project a { color: #FFD6FF; font-weight: bold; }
 
     /* Contact links */
-    .contact-links a { display: inline-block; margin-right: 1rem; padding: 0.5rem 1rem; border: 1px solid #9DE0AD; border-radius: 5px; color: #9DE0AD; transition: 0.3s; }
-    .contact-links a:hover { background: #9DE0AD; color: #121212; }
+    .contact-links a { display: inline-block; margin-right: 1rem; padding: 0.5rem 1rem; border: 1px solid #FFD6FF; border-radius: 5px; color: #FFD6FF; transition: 0.3s; }
+    .contact-links a:hover { background: #FFD6FF; color: #2c2c2c; }
 
     /* Footer */
-    footer { text-align: center; padding: 2rem; color: #888; background: #1e1e1e; }
+    footer { text-align: center; padding: 2rem; color: #aaa; background: #3a3a3a; }
 
+    /* Responsive */
+    @media (max-width: 768px) {
+      .hero { flex-direction: column; text-align: center; }
+      .hero img { width: 150px; }
+    }
   </style>
 </head>
 <body>
 
   <!-- Navigation -->
   <nav>
+    <a href="#hero">Home</a>
     <a href="#about">About</a>
-    <a href="#skills">Skills</a>
+    <a href="#education">Education</a>
+    <a href="#work">Work</a>
     <a href="#projects">Projects</a>
     <a href="#contact">Contact</a>
   </nav>
 
-  <!-- About Me -->
-  <section id="about" class="fade-in">
-    <h1>Hi, I'm Joyce Maher</h1>
-    <p>I'm a computer engineering student specializing in mobile application development. I enjoy creating intuitive UI and implementing functional apps using Flutter. I also work with APIs, Firebase, and logic-based programming.</p>
+  <!-- Hero / Welcome -->
+  <section id="hero" class="hero fade-in">
+    <div class="hero-text">
+      <h1>Hi! Welcome to Joyce’s world 🌸</h1>
+      <p>I’m Joyce Maher, a passionate computer engineering student. I love turning ideas into apps, creating beautiful UI, and solving problems with code.</p>
+      <p>Explore my portfolio to see my projects, skills, and how to get in touch!</p>
+    </div>
+    <img src="your-photo.jpg" alt="Joyce Maher Photo">
   </section>
 
-  <!-- Skills -->
-  <section id="skills" class="fade-in">
-    <h2>Skills</h2>
-    <p>Mobile Development (Flutter), UI/UX Design, Firebase, APIs, Python, Algorithms, Data Analytics, Microprocessor & Electronics knowledge.</p>
+  <!-- About Me -->
+  <section id="about" class="fade-in">
+    <h2>About Me</h2>
+    <p>I’m in my third year of computer engineering and specialize in mobile application development with Flutter. I enjoy creating intuitive UI and bringing ideas to life through coding. I’m comfortable working with APIs, Firebase, and data-driven projects.</p>
+    <p>Aside from coding, I love learning new technologies and expanding my skillset to build professional and creative applications.</p>
+  </section>
+
+  <!-- Education -->
+  <section id="education" class="fade-in">
+    <h2>Education</h2>
+    <p>Currently pursuing a Bachelor’s degree in Computer Engineering at AAST University, Cairo, Egypt. Focused on mobile app development, algorithms, electronics, and data analytics.</p>
+  </section>
+
+  <!-- Work / Experience -->
+  <section id="work" class="fade-in">
+    <h2>Work / Experience</h2>
+    <p>Working on multiple Flutter projects, gaining hands-on experience with UI/UX, APIs, and database integration. Also working on a graduation project focused on cybersecurity applications.</p>
   </section>
 
   <!-- Projects -->
   <section id="projects" class="fade-in">
     <h2>Projects</h2>
     
-    <!-- Example project -->
     <div class="project">
-      <h3>Project 1: <a href="https://github.com/JoyceMaher/depi-task3-food-ui-partC" target="_blank">Food UI App</a></h3>
+      <h3>Food UI App: <a href="https://github.com/JoyceMaher/depi-task3-food-ui-partC" target="_blank">GitHub</a></h3>
       <p>A Flutter-based mobile app project focused on responsive food menu UI with interactive components.</p>
     </div>
 
     <div class="project">
-      <h3>Project 2: <a href="https://github.com/JoyceMaher/depi-task2-food-ui" target="_blank">Food UI Part B</a></h3>
+      <h3>Food UI Part B: <a href="https://github.com/JoyceMaher/depi-task2-food-ui" target="_blank">GitHub</a></h3>
       <p>Another Flutter project for dynamic food display, implementing horizontal scrollable menus and clean design.</p>
     </div>
 
-    <!-- Add more projects here following the same structure -->
+    <!-- Add more projects as needed -->
 
   </section>
 
