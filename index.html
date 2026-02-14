@@ -20,7 +20,7 @@ body{
   color:#444;
 }
 
-/* ===== HERO ===== */
+/* HERO */
 .hero{
   display:flex;
   justify-content:space-between;
@@ -29,10 +29,6 @@ body{
   background:linear-gradient(135deg,#fbc2eb,#a6c1ee);
   color:white;
   flex-wrap:wrap;
-}
-
-.hero-text{
-  max-width:500px;
 }
 
 .hero-text h1{
@@ -60,7 +56,7 @@ body{
   object-fit:cover;
 }
 
-/* ===== SECTION ===== */
+/* SECTION */
 .section{
   padding:70px 10%;
 }
@@ -70,48 +66,18 @@ body{
   margin-bottom:40px;
   font-size:28px;
   color:#666;
-  position:relative;
 }
 
-.section-title::after{
-  content:'';
-  width:60px;
-  height:4px;
-  background:#fbc2eb;
-  display:block;
-  margin:10px auto;
-  border-radius:10px;
-}
-
-/* ===== ABOUT ===== */
-.about{
-  max-width:900px;
-  margin:auto;
-  text-align:center;
-  line-height:1.8;
-  font-size:17px;
-}
-
-.social-icons{
-  margin-top:20px;
-}
-
-.social-icons img{
-  width:35px;
-  margin:0 10px;
-  transition:0.3s;
-}
-
-.social-icons img:hover{
-  transform:scale(1.2);
-}
-
-/* ===== SKILLS ===== */
+/* SKILLS */
 .skills-container{
   display:flex;
   justify-content:center;
   flex-wrap:wrap;
-  gap:40px;
+  gap:30px;
+}
+
+.skill-wrapper{
+  text-align:center;
 }
 
 .skill{
@@ -122,18 +88,39 @@ body{
   display:flex;
   align-items:center;
   justify-content:center;
-  text-align:center;
-  font-weight:600;
   color:white;
-  box-shadow:0 10px 25px rgba(0,0,0,0.1);
+  font-weight:600;
+  cursor:pointer;
   transition:0.3s;
+  box-shadow:0 8px 20px rgba(0,0,0,0.1);
 }
 
 .skill:hover{
   transform:scale(1.1);
 }
 
-/* ===== CONNECTED CARDS ===== */
+.projects{
+  max-height:0;
+  overflow:hidden;
+  transition:0.4s ease;
+  margin-top:15px;
+  background:white;
+  border-radius:15px;
+  box-shadow:0 5px 15px rgba(0,0,0,0.1);
+  padding:0 15px;
+}
+
+.projects.active{
+  max-height:200px;
+  padding:15px;
+}
+
+.projects p{
+  margin:5px 0;
+  font-size:14px;
+}
+
+/* CONNECTED CARDS */
 .connected{
   display:flex;
   justify-content:center;
@@ -167,7 +154,7 @@ body{
   background:#fbc2eb;
 }
 
-/* ===== CONTACT ===== */
+/* CONTACT */
 .contact{
   text-align:center;
   padding:60px 20px;
@@ -175,17 +162,11 @@ body{
   color:white;
 }
 
-.contact p{
-  margin:10px 0;
-  font-size:18px;
-}
-
 footer{
   text-align:center;
   padding:20px;
   background:#fff;
   color:#888;
-  font-size:14px;
 }
 </style>
 </head>
@@ -200,47 +181,75 @@ footer{
   </div>
 
   <div class="avatar">
-    <img src="https://raw.githubusercontent.com/JoyceMaher/JoyceMaher.github.io/main/joyce.jpeg" alt="Joyce Maher">
-  </div>
-</section>
-
-<!-- ABOUT -->
-<section class="section">
-  <h2 class="section-title">About Me</h2>
-  <div class="about">
-    <p>
-      Hello, I'm <strong>Joyce Maher</strong>, a 23-year-old Mobile Application Developer 
-      and Computer Engineering student at the Arab Academy for Science, Technology & Maritime Transport. 
-      I have successfully completed a verified Flutter Mobile Application Development course at Route Academy 
-      and I am currently advancing my expertise through an ongoing program at DEPI in the same field.
-      <br><br>
-      Beyond academics, I have proudly volunteered at WellSpring Egypt, contributing to initiatives 
-      supporting children and community development. I am passionate about building impactful, 
-      user-friendly mobile applications and I am actively seeking an opportunity to grow as a 
-      professional Mobile Application Developer.
-    </p>
-
-    <div class="social-icons">
-      <a href="https://github.com/JoyceMaher" target="_blank">
-        <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub">
-      </a>
-
-      <a href="https://www.linkedin.com/in/joyce-maher-4a8756369/" target="_blank">
-        <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn">
-      </a>
-    </div>
+    <img src="https://raw.githubusercontent.com/JoyceMaher/JoyceMaher.github.io/main/joyce.jpeg">
   </div>
 </section>
 
 <!-- SKILLS -->
 <section class="section">
-  <h2 class="section-title">Skills</h2>
+  <h2 class="section-title">Skills (Click to View Projects)</h2>
+
   <div class="skills-container">
-    <div class="skill">Flutter</div>
-    <div class="skill">Dart</div>
-    <div class="skill">UI/UX</div>
-    <div class="skill">C</div>
-    <div class="skill">C#</div>
+
+    <!-- Flutter -->
+    <div class="skill-wrapper">
+      <div class="skill" onclick="toggle(this)">Flutter</div>
+      <div class="projects">
+        <p>Quran App</p>
+        <p>Event Planning App</p>
+        <p>Food Delivery App</p>
+        <p>CyberSecurity App</p>
+      </div>
+    </div>
+
+    <!-- C -->
+    <div class="skill-wrapper">
+      <div class="skill" onclick="toggle(this)">C</div>
+      <div class="projects">
+        <p>Super Mario Game</p>
+      </div>
+    </div>
+
+    <!-- C++ -->
+    <div class="skill-wrapper">
+      <div class="skill" onclick="toggle(this)">C++</div>
+      <div class="projects">
+        <p>Data Structure Compression App</p>
+      </div>
+    </div>
+
+    <!-- C# -->
+    <div class="skill-wrapper">
+      <div class="skill" onclick="toggle(this)">C#</div>
+      <div class="projects">
+        <p>Banking System App</p>
+      </div>
+    </div>
+
+    <!-- JavaScript -->
+    <div class="skill-wrapper">
+      <div class="skill" onclick="toggle(this)">JavaScript</div>
+      <div class="projects">
+        <p>Fully Built ATM Bank System</p>
+      </div>
+    </div>
+
+    <!-- Python -->
+    <div class="skill-wrapper">
+      <div class="skill" onclick="toggle(this)">Python</div>
+      <div class="projects">
+        <p>Chicken Invaders Game</p>
+      </div>
+    </div>
+
+    <!-- Arduino -->
+    <div class="skill-wrapper">
+      <div class="skill" onclick="toggle(this)">Arduino Uno</div>
+      <div class="projects">
+        <p>Fully Home Security System</p>
+      </div>
+    </div>
+
   </div>
 </section>
 
@@ -250,28 +259,11 @@ footer{
   <div class="connected">
     <div class="card">
       <h3>NRC School</h3>
-      <p>High School Education</p>
     </div>
     <div class="connector"></div>
     <div class="card">
       <h3>Arab Academy for Science, Technology & Maritime</h3>
       <p>Computer Engineering</p>
-    </div>
-  </div>
-</section>
-
-<!-- CERTIFICATES -->
-<section class="section">
-  <h2 class="section-title">Certificates</h2>
-  <div class="connected">
-    <div class="card">
-      <h3>Route Academy</h3>
-      <p>Verified Flutter Mobile Application Development</p>
-    </div>
-    <div class="connector"></div>
-    <div class="card">
-      <h3>DEPI</h3>
-      <p>Ongoing Flutter Development Program</p>
     </div>
   </div>
 </section>
@@ -284,8 +276,18 @@ footer{
 </section>
 
 <footer>
-  © 2026 Joyce Maher. All Rights Reserved.
+  © 2026 Joyce Maher
 </footer>
+
+<script>
+function toggle(element){
+  let allProjects = document.querySelectorAll('.projects');
+  allProjects.forEach(p => p.classList.remove('active'));
+
+  let projectBox = element.nextElementSibling;
+  projectBox.classList.toggle('active');
+}
+</script>
 
 </body>
 </html>
