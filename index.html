@@ -1,142 +1,214 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Joyce Maher Portfolio</title>
-  <style>
-    /* Reset */
-    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
-    body { background: #2c2c2c; color: #f5f5f5; scroll-behavior: smooth; }
-    a { text-decoration: none; }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Joyce Maher Portfolio</title>
 
-    /* Animation */
-    .fade-in { opacity: 0; transform: translateY(20px); transition: 1s ease-out; }
-    .fade-in.visible { opacity: 1; transform: translateY(0); }
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
-    /* Navigation */
-    nav { position: fixed; top: 0; width: 100%; background: #3a3a3a; display: flex; justify-content: center; gap: 2rem; padding: 1rem 0; z-index: 1000; }
-    nav a { color: #f5f5f5; text-transform: uppercase; font-weight: bold; transition: 0.3s; }
-    nav a:hover { color: #FFD6FF; }
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins',sans-serif;
+}
 
-    /* Hero */
-    .hero { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 2rem; padding: 120px 20px 60px 20px; background: #383838; border-bottom: 3px solid #9DE0AD; }
-    .hero-text { max-width: 500px; }
-    .hero-text h1 { font-size: 2.5rem; color: #FFD6FF; margin-bottom: 1rem; }
-    .hero-text p { font-size: 1.2rem; color: #ddd; margin-bottom: 1rem; }
-    .hero img { width: 200px; border-radius: 50%; border: 3px solid #9DE0AD; }
+body{
+  background: linear-gradient(135deg,#fdfbfb,#ebedee);
+  color:#444;
+}
 
-    /* Sections */
-    section { padding: 80px 20px; min-height: 80vh; }
-    h2 { color: #9DE0AD; margin-bottom: 1rem; font-size: 2rem; }
-    p { margin-bottom: 1rem; line-height: 1.6; color: #ddd; }
+/* ===== HERO SECTION ===== */
+.hero{
+  text-align:center;
+  padding:80px 20px;
+  background:linear-gradient(135deg,#fbc2eb,#a6c1ee);
+  color:#fff;
+}
 
-    /* Projects */
-    .project { background: #3a3a3a; padding: 1rem; margin: 1rem 0; border-left: 4px solid #FFD6FF; }
-    .project a { color: #FFD6FF; font-weight: bold; }
+.hero h1{
+  font-size:40px;
+  font-weight:600;
+}
 
-    /* Contact links */
-    .contact-links a { display: inline-block; margin-right: 1rem; padding: 0.5rem 1rem; border: 1px solid #FFD6FF; border-radius: 5px; color: #FFD6FF; transition: 0.3s; }
-    .contact-links a:hover { background: #FFD6FF; color: #2c2c2c; }
+.hero h2{
+  margin-top:15px;
+  font-weight:300;
+  font-size:24px;
+}
 
-    /* Footer */
-    footer { text-align: center; padding: 2rem; color: #aaa; background: #3a3a3a; }
+/* ===== SECTION STYLE ===== */
+.section{
+  padding:70px 10%;
+}
 
-    /* Responsive */
-    @media (max-width: 768px) {
-      .hero { flex-direction: column; text-align: center; }
-      .hero img { width: 150px; }
-    }
-  </style>
+.section-title{
+  text-align:center;
+  margin-bottom:50px;
+  font-size:28px;
+  color:#666;
+  position:relative;
+}
+
+.section-title::after{
+  content:'';
+  width:60px;
+  height:4px;
+  background:#fbc2eb;
+  display:block;
+  margin:10px auto;
+  border-radius:10px;
+}
+
+/* ===== SKILLS ===== */
+.skills-container{
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:40px;
+}
+
+.skill{
+  width:130px;
+  height:130px;
+  border-radius:50%;
+  background:linear-gradient(135deg,#a6c1ee,#fbc2eb);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  font-weight:600;
+  color:white;
+  box-shadow:0 10px 25px rgba(0,0,0,0.1);
+  transition:0.3s;
+}
+
+.skill:hover{
+  transform:scale(1.1);
+}
+
+/* ===== CONNECTED CARDS (Education & Certificates) ===== */
+.connected{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:0;
+  margin-top:40px;
+}
+
+.card{
+  background:#ffffff;
+  padding:30px;
+  width:300px;
+  text-align:center;
+  border-radius:20px;
+  box-shadow:0 8px 20px rgba(0,0,0,0.08);
+}
+
+.card:first-child{
+  border-top-right-radius:0;
+  border-bottom-right-radius:0;
+}
+
+.card:last-child{
+  border-top-left-radius:0;
+  border-bottom-left-radius:0;
+}
+
+.connector{
+  width:40px;
+  height:5px;
+  background:#fbc2eb;
+}
+
+/* ===== CONTACT ===== */
+.contact{
+  text-align:center;
+  padding:60px 20px;
+  background:linear-gradient(135deg,#a6c1ee,#fbc2eb);
+  color:white;
+}
+
+.contact p{
+  margin:10px 0;
+  font-size:18px;
+}
+
+footer{
+  text-align:center;
+  padding:20px;
+  background:#fff;
+  color:#888;
+  font-size:14px;
+}
+</style>
 </head>
+
 <body>
 
-  <!-- Navigation -->
-  <nav>
-    <a href="#hero">Home</a>
-    <a href="#about">About</a>
-    <a href="#education">Education</a>
-    <a href="#work">Work</a>
-    <a href="#projects">Projects</a>
-    <a href="#contact">Contact</a>
-  </nav>
+<!-- HERO -->
+<section class="hero">
+  <h1>Welcome to Joyce's World</h1>
+  <h2>Hi, I'm Joyce Maher</h2>
+</section>
 
-  <!-- Hero / Welcome -->
-  <section id="hero" class="hero fade-in">
-    <div class="hero-text">
-      <h1>Hi! Welcome to Joyce’s world 🌸</h1>
-      <p>I’m Joyce Maher, a passionate computer engineering student. I love turning ideas into apps, creating beautiful UI, and solving problems with code.</p>
-      <p>Explore my portfolio to see my projects, skills, and how to get in touch!</p>
+<!-- SKILLS -->
+<section class="section">
+  <h2 class="section-title">Skills</h2>
+  <div class="skills-container">
+    <div class="skill">Flutter</div>
+    <div class="skill">Dart</div>
+    <div class="skill">UI/UX</div>
+    <div class="skill">HTML</div>
+    <div class="skill">CSS</div>
+  </div>
+</section>
+
+<!-- EDUCATION -->
+<section class="section">
+  <h2 class="section-title">Education</h2>
+  <div class="connected">
+    <div class="card">
+      <h3>NRC School</h3>
+      <p>High School Education</p>
     </div>
-    <img src="your-photo.jpg" alt="Joyce Maher Photo">
-  </section>
-
-  <!-- About Me -->
-  <section id="about" class="fade-in">
-    <h2>About Me</h2>
-    <p>I’m in my third year of computer engineering and specialize in mobile application development with Flutter. I enjoy creating intuitive UI and bringing ideas to life through coding. I’m comfortable working with APIs, Firebase, and data-driven projects.</p>
-    <p>Aside from coding, I love learning new technologies and expanding my skillset to build professional and creative applications.</p>
-  </section>
-
-  <!-- Education -->
-  <section id="education" class="fade-in">
-    <h2>Education</h2>
-    <p>Currently pursuing a Bachelor’s degree in Computer Engineering at AAST University, Cairo, Egypt. Focused on mobile app development, algorithms, electronics, and data analytics.</p>
-  </section>
-
-  <!-- Work / Experience -->
-  <section id="work" class="fade-in">
-    <h2>Work / Experience</h2>
-    <p>Working on multiple Flutter projects, gaining hands-on experience with UI/UX, APIs, and database integration. Also working on a graduation project focused on cybersecurity applications.</p>
-  </section>
-
-  <!-- Projects -->
-  <section id="projects" class="fade-in">
-    <h2>Projects</h2>
-    
-    <div class="project">
-      <h3>Food UI App: <a href="https://github.com/JoyceMaher/depi-task3-food-ui-partC" target="_blank">GitHub</a></h3>
-      <p>A Flutter-based mobile app project focused on responsive food menu UI with interactive components.</p>
+    <div class="connector"></div>
+    <div class="card">
+      <h3>Arab Academy for Science, Technology & Maritime</h3>
+      <p>University Education</p>
     </div>
+  </div>
+</section>
 
-    <div class="project">
-      <h3>Food UI Part B: <a href="https://github.com/JoyceMaher/depi-task2-food-ui" target="_blank">GitHub</a></h3>
-      <p>Another Flutter project for dynamic food display, implementing horizontal scrollable menus and clean design.</p>
+<!-- CERTIFICATES -->
+<section class="section">
+  <h2 class="section-title">Certificates</h2>
+  <div class="connected">
+    <div class="card">
+      <h3>Route Academy</h3>
+      <p>Software Development Training</p>
     </div>
-
-    <!-- Add more projects as needed -->
-
-  </section>
-
-  <!-- Contact -->
-  <section id="contact" class="fade-in">
-    <h2>Contact Me</h2>
-    <div class="contact-links">
-      <a href="mailto:joyce@example.com">Email</a>
-      <a href="tel:+201234567890">Phone</a>
-      <a href="https://www.linkedin.com/in/joycemaher" target="_blank">LinkedIn</a>
-      <a href="https://github.com/JoyceMaher" target="_blank">GitHub</a>
+    <div class="connector"></div>
+    <div class="card">
+      <h3>DEPI</h3>
+      <p>Professional Development Program</p>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- Footer -->
-  <footer>
-    &copy; 2026 Joyce Maher | All Rights Reserved
-  </footer>
+<!-- CONTACT -->
+<section class="contact">
+  <h2>Contact Me</h2>
+  <p>📞 01203120180</p>
+  <p>📧 joycemaher20@gmail.com</p>
+</section>
 
-  <!-- Scroll animation script -->
-  <script>
-    const faders = document.querySelectorAll('.fade-in');
-    const appearOptions = { threshold: 0.2 };
-    const appearOnScroll = new IntersectionObserver((entries, observer) => {
-      entries.forEach(entry => {
-        if (!entry.isIntersecting) return;
-        entry.target.classList.add('visible');
-        observer.unobserve(entry.target);
-      });
-    }, appearOptions);
+<footer>
+  © 2026 Joyce Maher. All Rights Reserved.
+</footer>
 
-    faders.forEach(fader => appearOnScroll.observe(fader));
-  </script>
 </body>
 </html>
