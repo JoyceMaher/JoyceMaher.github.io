@@ -20,33 +20,54 @@ body{
   color:#444;
 }
 
-/* ===== HERO SECTION ===== */
+/* ===== HERO ===== */
 .hero{
-  text-align:center;
-  padding:80px 20px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:80px 10%;
   background:linear-gradient(135deg,#fbc2eb,#a6c1ee);
-  color:#fff;
+  color:white;
+  flex-wrap:wrap;
 }
 
-.hero h1{
-  font-size:40px;
-  font-weight:600;
+.hero-text{
+  max-width:500px;
 }
 
-.hero h2{
-  margin-top:15px;
+.hero-text h1{
+  font-size:42px;
+  margin-bottom:15px;
+}
+
+.hero-text h2{
   font-weight:300;
   font-size:24px;
 }
 
-/* ===== SECTION STYLE ===== */
+.avatar{
+  width:220px;
+  height:220px;
+  border-radius:50%;
+  overflow:hidden;
+  border:6px solid white;
+  box-shadow:0 15px 30px rgba(0,0,0,0.2);
+}
+
+.avatar img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+/* ===== SECTION ===== */
 .section{
   padding:70px 10%;
 }
 
 .section-title{
   text-align:center;
-  margin-bottom:50px;
+  margin-bottom:40px;
   font-size:28px;
   color:#666;
   position:relative;
@@ -60,6 +81,29 @@ body{
   display:block;
   margin:10px auto;
   border-radius:10px;
+}
+
+/* ===== ABOUT ===== */
+.about{
+  max-width:900px;
+  margin:auto;
+  text-align:center;
+  line-height:1.8;
+  font-size:17px;
+}
+
+.social-icons{
+  margin-top:20px;
+}
+
+.social-icons img{
+  width:35px;
+  margin:0 10px;
+  transition:0.3s;
+}
+
+.social-icons img:hover{
+  transform:scale(1.2);
 }
 
 /* ===== SKILLS ===== */
@@ -89,18 +133,17 @@ body{
   transform:scale(1.1);
 }
 
-/* ===== CONNECTED CARDS (Education & Certificates) ===== */
+/* ===== CONNECTED CARDS ===== */
 .connected{
   display:flex;
   justify-content:center;
   align-items:center;
   flex-wrap:wrap;
-  gap:0;
   margin-top:40px;
 }
 
 .card{
-  background:#ffffff;
+  background:white;
   padding:30px;
   width:300px;
   text-align:center;
@@ -151,8 +194,42 @@ footer{
 
 <!-- HERO -->
 <section class="hero">
-  <h1>Welcome to Joyce's World</h1>
-  <h2>Hi, I'm Joyce Maher</h2>
+  <div class="hero-text">
+    <h1>Welcome to Joyce's World</h1>
+    <h2>Hi, I'm Joyce Maher</h2>
+  </div>
+
+  <div class="avatar">
+    <img src="https://raw.githubusercontent.com/JoyceMaher/JoyceMaher.github.io/main/joyce.jpeg" alt="Joyce Maher">
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="section">
+  <h2 class="section-title">About Me</h2>
+  <div class="about">
+    <p>
+      Hello, I'm <strong>Joyce Maher</strong>, a 23-year-old Mobile Application Developer 
+      and Computer Engineering student at the Arab Academy for Science, Technology & Maritime Transport. 
+      I have successfully completed a verified Flutter Mobile Application Development course at Route Academy 
+      and I am currently advancing my expertise through an ongoing program at DEPI in the same field.
+      <br><br>
+      Beyond academics, I have proudly volunteered at WellSpring Egypt, contributing to initiatives 
+      supporting children and community development. I am passionate about building impactful, 
+      user-friendly mobile applications and I am actively seeking an opportunity to grow as a 
+      professional Mobile Application Developer.
+    </p>
+
+    <div class="social-icons">
+      <a href="https://github.com/JoyceMaher" target="_blank">
+        <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub">
+      </a>
+
+      <a href="https://www.linkedin.com/in/joyce-maher-4a8756369/" target="_blank">
+        <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn">
+      </a>
+    </div>
+  </div>
 </section>
 
 <!-- SKILLS -->
@@ -162,8 +239,8 @@ footer{
     <div class="skill">Flutter</div>
     <div class="skill">Dart</div>
     <div class="skill">UI/UX</div>
-    <div class="skill">HTML</div>
-    <div class="skill">CSS</div>
+    <div class="skill">C</div>
+    <div class="skill">C#</div>
   </div>
 </section>
 
@@ -178,7 +255,7 @@ footer{
     <div class="connector"></div>
     <div class="card">
       <h3>Arab Academy for Science, Technology & Maritime</h3>
-      <p>University Education</p>
+      <p>Computer Engineering</p>
     </div>
   </div>
 </section>
@@ -189,12 +266,12 @@ footer{
   <div class="connected">
     <div class="card">
       <h3>Route Academy</h3>
-      <p>Software Development Training</p>
+      <p>Verified Flutter Mobile Application Development</p>
     </div>
     <div class="connector"></div>
     <div class="card">
       <h3>DEPI</h3>
-      <p>Professional Development Program</p>
+      <p>Ongoing Flutter Development Program</p>
     </div>
   </div>
 </section>
